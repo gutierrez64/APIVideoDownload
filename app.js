@@ -3,7 +3,7 @@ const ytdl = require("ytdl-core")
 const app = express()
 const port = 3000
 
-app.post("/:url", function (req, res) {
+app.get("/:url", function (req, res) {
     const url = req.query
     res.header("Content-Disposition", 'attachmentt; filename="video.mp4"')
     return ytdl(url).pipe(res)
